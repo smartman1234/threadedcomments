@@ -1,0 +1,26 @@
+modules:
+  jira:issuePanel:
+    - key: todo-panel
+      resource: main
+      resolver:
+        function: resolver
+      title: Threaded Comments
+      viewportSize: medium
+      tooltip: Add a threaded comment
+      icon: https://developer.atlassian.com/platform/forge/images/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/comment/build
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+    - storage:app
+  content:
+    styles:
+      - unsafe-inline
+app:
+  id: ari:cloud:ecosystem::app/fa588f28-2f9f-4c89-8ffa-380722591243
